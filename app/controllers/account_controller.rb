@@ -15,4 +15,7 @@ class AccountController < ApplicationController
     redirect_to  :action => "index"
   end
   
+  def modify
+    
+  end
 end
