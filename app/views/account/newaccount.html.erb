@@ -1,0 +1,19 @@
+<h1> Add a new phone number</h1>
+<%= form_for @accountl, :url => {:controller=>"account", :action => "create"} do |f| %>
+	<div class="field">
+	  	<%= f.label "ID" %> <br />
+	  	<%= f.text_field :_id %>
+	</div>
+	<div class="field">
+  		<%= f.label :password %> <br />
+  		<%= f.text_field :password %>
+	</div>
+	<div class="field">
+  		<%= f.label :email %> <br />
+  		<%= f.text_field :email %>
+	</div>
+  <div class="actions">
+    <%= f.submit %>
+   </div>
+<% end %>
+<p><%= link_to 'Back', account_index_path %></p>

@@ -11,12 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141008190110) do
+ActiveRecord::Schema.define(version: 20141010073829) do
 
-  create_table "pbooks", force: true do |t|
-    t.string   "name"
-    t.integer  "phone"
-    t.date     "birthday"
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "accountls", force: true do |t|
+    t.string   "_id"
+    t.string   "password"
+    t.string   "email"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
