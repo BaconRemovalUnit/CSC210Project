@@ -1,16 +1,15 @@
 Rails.application.routes.draw do
-  get 'account/index'
-
-  get "account/newaccount"
-  get "account/index"
-  get "account/modify/:id" => "account#modify"
-  get "account/del/:id" => "account#del"
+  get 'users/index'
+  get "users/newuser"
+  get "users/index"
+  get "users/modify/:id" => "users#modify"
+  get "users/del/:id" => "users#del"
   
-  post "account/create"
-  put "account/updating/:id" => "account#updating"
-  put "account/destoring/:id" => "account#destoring"
+  post "users/create"
+  put "users/updating/:id" => "users#updating"
+  put "users/destoring/:id" => "users#destoring"
   
-  root :to => 'account#index'
+  root :to => 'users#index'
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -3,7 +3,7 @@
 	<tr>
 		<td>ID</td> <td>Password</td> <td>Email</td>
 	</tr>
-<% @accounts.each do |p| %>
+<% @users.each do |p| %>
 	<tr>
 		<td><%= p._id %></td> <td><%=p.password%></td> <td><%=p.email%></td>
 		<td> <%= link_to "edit", :action=>"modify", :id=>p %></td>
@@ -11,4 +11,4 @@
 	</tr>
 <% end %>
 </table>
-<p><%= link_to "Create new account", account_newaccount_path%></p>
+<p><%= link_to "Create new account", users_newuser_path%></p>
