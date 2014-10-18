@@ -15,5 +15,13 @@
   <div class="actions">
     <%= f.submit %>
    </div>
+   
+   <ul>
+  <% @user.errors.full_messages.each do |msg| %>
+  <li><%= msg %></li>
+  <% end %>
+</ul>
+   
 <% end %>
+
 <p><%= link_to 'Back', users_index_path %></p>

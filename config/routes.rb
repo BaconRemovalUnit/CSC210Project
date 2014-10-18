@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'home/welcome'
+
+  get 'home/login'
+
+  get 'home/setting'
+
   get 'users/index'
   get "users/newuser"
   get "users/index"
@@ -9,7 +15,25 @@ Rails.application.routes.draw do
   put "users/updating/:id" => "users#updating"
   put "users/destoring/:id" => "users#destoring"
   
-  root :to => 'users#index'
+  get "home/welcome"
+  get "home/login"
+  post "home/login"=> "authentication#create"
+ 
+  
+  get    "autentication/login"   => "authetication#new"
+  
+  post   "authentication/login"   => "authetication#create"
+  delete 'logout'  => 'authetication#destroy'
+
+  
+ 
+  #get "signed_out" => "authentication#signed_out"
+  #get "change_password" => "authentication#change_password"
+  #get "forgot_password" => "authentication#forgot_password"
+  #get "new_user" => "authentication#new_user"
+  #get "password_sent" => "authentication#password_sent"
+  
+  root :to => 'home#welcome'
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
