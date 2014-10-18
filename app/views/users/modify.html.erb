@@ -1,0 +1,21 @@
+<%= form_for @user, :url => { :controller => 'users', :action => 'update', :id => @user } do |f| %>
+	<div class="field">
+    	<%= f.label :_id, "ID" %>
+    </div>
+    
+	<div class="field">
+    	<%= f.label :password, "password" %>
+    	<%= f.text_field :password %>
+    <div>
+    
+    <div class="field">
+    	<%= f.label :email, "email" %>
+    	<%= f.text_field :email %>
+    </div>
+
+
+  	<div class="actions">
+    	<%= f.submit "Update" %>
+   	</div>
+    
+<% end %>

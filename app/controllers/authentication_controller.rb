@@ -10,9 +10,11 @@ class AuthenticationController < ApplicationController
   end
 
   def create
+    
     user = User.find_by(_id: params[:authentication][:userid])
     if user && params[:authentication][:password] == user.password
-      redirect_to users_index_path
+      session[:user_id] = user.id
+      redirect_to home_welcome_path
       # Log the user in and redirect to the user's show page.
     else
       flash[:danger] = 'Invalid email/password combination'
@@ -21,6 +23,11 @@ class AuthenticationController < ApplicationController
   end
 
   def destroy
+  end
+  
+  def signout
+    session[:user_id] = nil
+    redirect_to home_welcome_path
   end
   
   

@@ -11,11 +11,31 @@ class UsersController < ApplicationController
     
     ActionController::Parameters.permit_all_parameters = true
     @user = User.new(params[:user])
-    @user.save
-    redirect_to  :action => "index"
+    if @user.save
+      redirect_to  :action => "index"
+    else
+        
+    end
   end
   
-  def modifyW
-    
+  def modify
+    @user = User.find(params[:id])
   end
+  
+  def update
+    @user = User.find(params[:id])
+    @user.update_attributes(params[:user])
+    if current_user
+      redirect_to home_welcome_path
+    else
+      redirect_to :action => "index"
+    end
+       
+  end
+  
+  def remove
+    User.find(params[:id]).delete
+    redirect_to home_welcome_path
+  end
+  
 end

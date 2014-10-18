@@ -1,14 +1,23 @@
-<h1> Loggin In </h1>
-<%= form_for(:authentication, :actions => "login_attempt") do |f| %>
-	<div class="field">
-	  	<%= f.label "ID" %> <br />
-	  	<%= f.text_field :userid %>
-	</div>
-	<div class="field">
-  		<%= f.label :password %> <br />
-  		<%= f.text_field :password %>
-	</div>
-  <div class="actions">
-    <%= f.submit %>
-   </div>
-<% end %>
+
+  <% if current_user %>
+    <h2>Hi <%= current_user._id %>, You have already logged in!!</h2>
+	<p><%= link_to "Click", home_welcome_path %> to return to home page!</p>
+  <% else %>
+  <h1> Logging In </h1>
+
+	<%= form_for(:authentication, :actions => "login_attempt") do |f| %>
+		<div class="field">
+		  	<%= f.label "ID" %> <br />
+		  	<%= f.text_field :userid %>
+		</div>
+		<div class="field">
+	  		<%= f.label :password %> <br />
+	  		<%= f.text_field :password %>
+		</div>
+	  <div class="actions">
+	    <%= f.submit %>
+	   </div>
+	<% end %>
+  <% end %>
+
+
