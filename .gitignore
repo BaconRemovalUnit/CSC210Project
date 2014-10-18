@@ -16,3 +16,6 @@
 /tmp
 
 .project
+Gemfile.lock
+
+db/schema.rb
