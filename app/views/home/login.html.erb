@@ -5,7 +5,7 @@
   <% else %>
   <h1> Logging In </h1>
 
-	<%= form_for(:authentication, :actions => "login_attempt") do |f| %>
+	<%= form_for(:authentication) do |f| %>
 		<div class="field">
 		  	<%= f.label "ID" %> <br />
 		  	<%= f.text_field :userid %>
