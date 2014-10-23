@@ -23,6 +23,7 @@ class UsersController < ApplicationController
   end
   
   def update
+    ActionController::Parameters.permit_all_parameters = true
     @user = User.find(params[:id])
     @user.update_attributes(params[:user])
     if current_user
