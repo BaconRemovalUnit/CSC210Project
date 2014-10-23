@@ -12,7 +12,7 @@ class UsersController < ApplicationController
     ActionController::Parameters.permit_all_parameters = true
     @user = User.new(params[:user])
     if @user.save
-      redirect_to  :action => "index"
+      redirect_to  home_welcome_path
     else
       redirect_to  :action => "newuser"
     end
