@@ -1,19 +1,16 @@
-<%= form_for @user, :url => { :controller => 'users', :action => 'update', :id => @user } do |f| %>
+<%= form_for @item, :url => { :controller => 'items', :action => 'update', :id => @item } do |f| %>
 	<div class="field">
-    	<%= f.label :_id, "ID" %>
-    </div>
-    
+	  	<%= f.label "Item name" %> <br />
+	  	<%= f.text_field :name %>
+	</div>
 	<div class="field">
-    	<%= f.label :password, "password" %>
-    	<%= f.text_field :password %>
-    <div>
-    
-    <div class="field">
-    	<%= f.label :email, "email" %>
-    	<%= f.text_field :email %>
-    </div>
-
-
+  		<%= f.label :description %> <br />
+  		<%= f.text_field :description %>
+	</div>	
+	<div class="field">
+  		<%= f.label :price %> <br />
+  		<%= f.text_field :price %>
+	</div>
   	<div class="actions">
     	<%= f.submit "Update" %>
    	</div>

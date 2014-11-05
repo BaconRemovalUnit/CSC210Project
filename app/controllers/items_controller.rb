@@ -1,9 +1,9 @@
-class ItemController < ApplicationController
+class ItemsController < ApplicationController
   def index
     @items = Item.all
   end
   
-  def newItem
+  def newitem
     @item = Item.new
   end
   
@@ -24,8 +24,12 @@ class ItemController < ApplicationController
   
   def update
     ActionController::Parameters.permit_all_parameters = true
-    @item = item.find(params[:id])
+    @item = Item.find(params[:id])
     @item.update_attributes(params[:item])
+       
+    
+      redirect_to items_index_path
+    
        
   end
   

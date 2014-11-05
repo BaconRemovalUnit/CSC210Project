@@ -1,27 +1,25 @@
 Rails.application.routes.draw do
-  get 'home/welcome'
-
-  get 'home/login'
-
-  get 'home/setting'
 
   get "users/newuser"
   get "users/index"
   get "users/modify/:id" => "users#modify"
   get "users/remove/:id" => "users#remove"
   
-  get "items/newitem"
-  get "items/index"
-  get "items/modify/:id" => "items#modify"
-  get "items/remove/:id" => "items#remove"
-  
   post "users/create"
   patch "users/update/:id" => "users#update" 
   #put "users/destoring/:id" => "users#destory"
   
+  get "items/newitem"
+  get "items/index"
+  get "items/modify/:id" => "items#modify"
+  get "items/remove/:id" => "items#remove"
+  post "items/create"
+  patch "items/update/:id" => "items#update" 
+  
   get "home/welcome"
   get "home/login"
   post "home/login"=> "authentication#create"
+  get 'home/setting'
  
   
   get    "autentication/login"   => "authentication#new"
