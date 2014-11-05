@@ -11,7 +11,11 @@ class ItemController < ApplicationController
     
     ActionController::Parameters.permit_all_parameters = true
     @item = Item.new(params[:item])
-     #redirect to some where
+        if @item.save
+      redirect_to  home_welcome_path
+    else
+      redirect_to  :action => "newItem"
+    end
   end
   
   def modify

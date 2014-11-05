@@ -10,6 +10,11 @@ Rails.application.routes.draw do
   get "users/modify/:id" => "users#modify"
   get "users/remove/:id" => "users#remove"
   
+  get "items/newitem"
+  get "items/index"
+  get "items/modify/:id" => "items#modify"
+  get "items/remove/:id" => "items#remove"
+  
   post "users/create"
   patch "users/update/:id" => "users#update" 
   #put "users/destoring/:id" => "users#destory"

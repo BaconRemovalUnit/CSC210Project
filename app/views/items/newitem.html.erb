@@ -1,0 +1,31 @@
+<h1> Upload New Item </h1>
+<%= form_for @item, :url => {:controller=>"items", :action => "create"} do |f| %>
+	<div class="field">
+	  	<%= f.label "Item name" %> <br />
+	  	<%= f.text_field :name %>
+	</div>
+	<div class="field">
+  		<%= f.label :username %> <br />
+  		<%= f.text_field :username %>
+	</div>
+	<div class="field">
+  		<%= f.label :description %> <br />
+  		<%= f.text_field :description %>
+	</div>	
+	<div class="field">
+  		<%= f.label :price %> <br />
+  		<%= f.text_field :price %>
+	</div>
+  <div class="actions">
+    <%= f.submit %>
+   </div>
+   
+   <ul>
+  <% @user.errors.full_messages.each do |msg| %>
+  <li><%= msg %></li>
+  <% end %>
+</ul>
+   
+<% end %>
+
+<p><%= link_to 'Back', users_index_path %></p>

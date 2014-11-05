@@ -1,0 +1,14 @@
+<h1>Account List</h1>
+<table>
+	<tr>
+		<td>Name</td> <td>Username</td> <td>Description</td> <td>Price</td>
+	</tr>
+<% @items.each do |p| %>
+	<tr>
+		<td><%= p.name %></td> <td><%=p.username%></td> <td><%=p.price%></td> <td><%=p.description%></td>
+		<td> <%= link_to "edit", :action=>"modify", :id=>p %></td>
+		<td><%= link_to "remove", :action=>"remove", :id=>p %></td>
+	</tr>
+<% end %>
+</table>
+<p><%= link_to "Upload new item", items_newitem_path%></p>
