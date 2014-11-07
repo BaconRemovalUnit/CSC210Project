@@ -5,13 +5,14 @@
 	  	<%= f.text_field :_id %>
 	</div>
 	<div class="field">
-  		<%= f.label :password %> <br />
-  		<%= f.text_field :password %>
+  		<%= f.label :password %> <br/>
+  		<%= f.password_field :password %>
 	</div>
 	<div class="field">
   		<%= f.label :email %> <br />
   		<%= f.text_field :email %>
 	</div>
+	<br />
   <div class="actions">
     <%= f.submit %>
    </div>
@@ -24,4 +25,4 @@
    
 <% end %>
 
-<p><%= link_to 'Back', users_index_path %></p>
+<p><%= link_to 'Back', home_welcome_path %></p>

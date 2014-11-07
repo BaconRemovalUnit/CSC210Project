@@ -35,7 +35,7 @@ class ItemsController < ApplicationController
   
   def remove
     Item.find(params[:id]).delete
-    redirect_to home_welcome_path
+    redirect_to items_index_path
   end
   
 end
