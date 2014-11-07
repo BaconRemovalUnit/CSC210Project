@@ -4,7 +4,7 @@
     <h2>Would you like to</h2>
     <h2><%= link_to "Edit", :controller=>"users", :action=>"modify", :id=>current_user %>  your account setting?</h2>
     <h2><%= link_to "Delete", :controller=>"users", :action=>"remove", :id=>current_user %>  your account?</h2>
-    <h2><p><%= link_to "Upload new item", items_newitem_path(:username => current_user)%></p></h2>
+    <h2><p><%= link_to "Upload new item", items_newitem_path %></p></h2>
     <h2><p><%= link_to "View all items", items_index_path %></p></h2>
 	<p><%= link_to "Sign Out", authentication_signout_path %></p>
   <% else %>
