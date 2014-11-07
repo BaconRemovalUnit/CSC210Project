@@ -4,8 +4,14 @@
     <h2>Would you like to</h2>
     <h2><%= link_to "Edit", :controller=>"users", :action=>"modify", :id=>current_user %>  your account setting?</h2>
     <h2><%= link_to "Delete", :controller=>"users", :action=>"remove", :id=>current_user %>  your account?</h2>
-    <p><%= link_to "Upload", items_newitem_path %></p>
+    
 	<p><%= link_to "Sign Out", authentication_signout_path %></p>
+			
+	<%= render 'table' %>
+	
+	<%= render 'form' %>
+
+	
   <% else %>
     <h2>Do you want to<h2>
 	<p><%= link_to "Login", home_login_path %></p>

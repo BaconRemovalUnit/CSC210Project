@@ -1,4 +1,4 @@
 class Item < ActiveRecord::Base
-    validates :name, :username, :price, presence: true
+    validates :name, presence: true
   
 end

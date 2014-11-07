@@ -9,13 +9,8 @@ Rails.application.routes.draw do
   patch "users/update/:id" => "users#update" 
   #put "users/destoring/:id" => "users#destory"
   
-  get "items/newitem"
-  get "items/index"
-  get "items/modify/:id" => "items#modify"
-  get "items/remove/:id" => "items#remove"
-  post "items/create"
-  patch "items/update/:id" => "items#update" 
-  
+  resources :items  
+
   get "home/welcome"
   get "home/login"
   post "home/login"=> "authentication#create"
