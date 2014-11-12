@@ -53,6 +53,10 @@ class ItemsController < ApplicationController
        
   end
   
+  def show
+    @item = Item.find(params[:id])
+  end
+  
   def remove
     Item.find(params[:id]).delete
     redirect_to items_index_path

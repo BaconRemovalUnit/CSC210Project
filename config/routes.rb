@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   #put "users/destoring/:id" => "users#destory"
   
   resources :items  
+  
+  get "items/index"
 
   get "home/welcome"
   get "home/login"

@@ -5,11 +5,10 @@ $(document).ready ->
     $error_container = $("#error_explanation", $item_form)
     $error_container_ul = $("ul", $error_container)
     
-    $("<tr>").html(xhr.responseJSON.name + " saved.").appendTo $item_form
+    $("<p>").html(xhr.responseJSON.name + " saved.").appendTo $item_form
+    $('table tbody').append('<tr><td>' +  xhr.responseJSON.name  + '</td><td>' + xhr.responseJSON.username + '</td><td>' + xhr.responseJSON.price + '</td><td>' + xhr.responseJSON.description + '</td></tr>')
     
-    
-    $('table tbody').append('<tr><td>' + xhr.responseJSON.name + '</td><td>' + xhr.responseJSON.username + '</td><td>' + xhr.responseJSON.price + '</td><td>' + xhr.responseJSON.description + '</td></tr>')
-    
+    $('form.item_form').reset();
     
     if $("li", $error_container_ul).length
       $("li", $error_container_ul).remove()
