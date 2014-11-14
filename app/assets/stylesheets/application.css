@@ -30,3 +30,12 @@ h2{
     text-align: center;
     margin:0.1em;
 }
+
+table{
+    float:right;
+}
+tr,td,th{
+    border: 1px solid black;
+    margin:0em;
+    padding:0em;
+}
