@@ -2,11 +2,18 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 h1{
-  color: #990000;
-  font-family: cursive;
+  color: darkgreen;
+  font-family: fantasy;
+  font-size: 500%;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: blink;
+  margin-bottom:0em;
 }
 
+
+
 body{
-  backgroun-image: url("green.jpg");
+  background-image: url("green1.jpg");
   background-repeat:no-repeat;
 }
