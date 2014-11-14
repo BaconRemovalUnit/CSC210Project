@@ -2,6 +2,11 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 h1{
-  color: aquamarine;
+  color: #990000;
   font-family: cursive;
+}
+
+body{
+  backgroun-image: url("green.jpg");
+  background-repeat:no-repeat;
 }
