@@ -57,9 +57,9 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
   end
   
-  def remove
+  def destroy
     Item.find(params[:id]).delete
-    redirect_to items_index_path
+    redirect_to items_path
   end
   
     private

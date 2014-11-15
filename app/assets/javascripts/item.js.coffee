@@ -8,7 +8,7 @@ $(document).ready ->
     $("<p>").html(xhr.responseJSON.name + " saved.").appendTo $item_form
     $('table tbody').append('<tr><td>' +  xhr.responseJSON.name  + '</td><td>' + xhr.responseJSON.username + '</td><td>' + xhr.responseJSON.price + '</td><td>' + xhr.responseJSON.description + '</td></tr>')
     
-    $('form.item_form').reset();
+    $item_form.reset();
     
     if $("li", $error_container_ul).length
       $("li", $error_container_ul).remove()

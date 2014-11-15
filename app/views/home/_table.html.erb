@@ -2,7 +2,7 @@
 	<% @items.each do |p| %>
 		<tr>
 			<div>
-				<td><%= p.name %></td> <td><%=p.username%></td> <td><%=p.price%></td> <td><%=p.description%></td>
+				<td><%= link_to p.name, item_path(p)%></td> <td><%=p.username%></td> <td><%=p.price%></td> <td><%=p.description%></td>
 			</div>
 		</tr>
 	<% end %>
