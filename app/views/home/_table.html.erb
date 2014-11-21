@@ -1,9 +1,9 @@
 <table id='item_table' >
+	<tbody id='item_tbody'>
 	<% @items.each do |p| %>
-		<tr>
-			<div>
-				<td><%= link_to p.name, item_path(p)%></td> <td><%=p.username%></td> <td><%=p.price%></td> <td><%=p.description%></td>
-			</div>
-		</tr>
+			<tr>			
+				<%= render 'tabledata', item: p  %>
+			</tr>
 	<% end %>
+	</tbody>
 </table>

@@ -1,0 +1,8 @@
+<% if remotipart_submitted? %>
+  alert('submitted via remotipart')
+<% else %>
+  alert('submitted via native jquery-ujs')
+<% end %>
+
+$('#item_tbody').append("<%= escape_javascript( render'home/tabledata', item: @item) %>");
+ 

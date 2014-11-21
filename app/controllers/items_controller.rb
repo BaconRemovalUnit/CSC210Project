@@ -15,15 +15,19 @@ class ItemsController < ApplicationController
   def create
     ActionController::Parameters.permit_all_parameters = true
     params[:item][:username] = User.find_by(id: current_user)._id
-    @item = Item.new(params[:item])
+    @item = Item.create( item_params )
 
+    
     respond_to do |format|
       if @item.save
         format.html { redirect_to @item, notice: 'Thing was successfully created.' }
         format.json { render json: @item }
+        
+        format.js
       else
         format.html { render :new }
         format.json { render json: @item.errors.full_messages, status: :unprocessable_entity }
+        format.js
       end
     end
   end
@@ -70,9 +74,7 @@ class ItemsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def item_params
-      #params.require(:item).permit(:title)
-      ActionController::Parameters.permit_all_parameters = true
-
+      params.require(:item).permit(:name, :username, :price, :description, :photo)
     end
   
 end

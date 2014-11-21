@@ -29,10 +29,11 @@ GEM
       tzinfo (~> 1.1)
     arel (5.0.1.20140414130214)
     builder (3.2.2)
-    climate_control (0.0.3)
-      activesupport (>= 3.0)
-    cocaine (0.5.4)
-      climate_control (>= 0.0.3, < 1.0)
+    carrierwave (0.10.0)
+      activemodel (>= 3.2.0)
+      activesupport (>= 3.2.0)
+      json (>= 1.7)
+      mime-types (>= 1.16)
     coffee-rails (4.0.1)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.0)
@@ -44,7 +45,7 @@ GEM
     execjs (2.2.2)
     hike (1.2.3)
     i18n (0.6.11)
-    jbuilder (2.2.4)
+    jbuilder (2.2.5)
       activesupport (>= 3.0.0, < 5)
       multi_json (~> 1.2)
     jquery-rails (3.1.2)
@@ -56,11 +57,6 @@ GEM
     mime-types (2.4.3)
     minitest (5.4.3)
     multi_json (1.10.1)
-    paperclip (4.2.0)
-      activemodel (>= 3.0.0)
-      activesupport (>= 3.0.0)
-      cocaine (~> 0.5.3)
-      mime-types
     pg (0.17.1-x86-mingw32)
     rack (1.5.2)
     rack-test (0.6.2)
@@ -83,6 +79,7 @@ GEM
     rake (10.3.2)
     rdoc (4.1.2)
       json (~> 1.4)
+    remotipart (1.2.1)
     rest-client (1.6.7)
       mime-types (>= 1.16)
     rvm (1.11.3.9)
@@ -129,12 +126,13 @@ PLATFORMS
   x86-mingw32
 
 DEPENDENCIES
+  carrierwave
   coffee-rails (~> 4.0.0)
   jbuilder (~> 2.0)
   jquery-rails
-  paperclip
   pg
   rails (= 4.1.6)
+  remotipart
   rvm
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)

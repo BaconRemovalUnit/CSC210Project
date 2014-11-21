@@ -17,3 +17,7 @@
 
 .project
 Gemfile.lock
+public/asset/uploads/
+public/images/uploads/
+public/system/items
+public/uploads/
