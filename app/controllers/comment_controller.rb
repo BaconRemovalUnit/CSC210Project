@@ -61,7 +61,7 @@ class CommentController < ApplicationController
   
   def destroy
     Comment.find(params[:id]).delete
-    redirect_to comments_path
+    redirect_to comment_index_path
   end
   
     private

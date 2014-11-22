@@ -8,6 +8,7 @@
 		<td><%=p.content%></td> 
 		<td><%=p.item%></td>
 		<td><%=p.user%></td>
+		<td><%= link_to "delete", comment_path(p), method: :delete%></td>
 
 	</tr>
 <% end %>
