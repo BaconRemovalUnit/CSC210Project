@@ -16,8 +16,7 @@ class ItemsController < ApplicationController
     ActionController::Parameters.permit_all_parameters = true
     params[:item][:username] = User.find_by(id: current_user)._id
     @item = Item.create( item_params )
-
-    
+  
     respond_to do |format|
       if @item.save
         format.html { redirect_to @item, notice: 'Thing was successfully created.' }

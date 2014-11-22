@@ -6,7 +6,7 @@
 		<% @items.each do |p| %>
 	<tr>
 		<td><%= link_to p.name, item_path(p)%></td> <td><%=p.username%></td> <td><%=p.price%></td> <td><%=p.description%></td>
-<%= link_to "Delete", destroy_item_path(p)%>
+
 
 		
 	</tr>

@@ -1,0 +1,14 @@
+<h1>Comment List</h1>
+<table>
+	<tr>
+		<td>Name</td> <td>Username</td> <td>Description</td> <td>Price</td>
+	</tr>
+		<% @comments.each do |p| %>
+	<tr>
+		<td><%=p.content%></td> 
+		<td><%=p.item%></td>
+		<td><%=p.user%></td>
+
+	</tr>
+<% end %>
+</table>

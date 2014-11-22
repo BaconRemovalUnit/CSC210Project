@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   post "users/create"
   patch "users/update/:id" => "users#update" 
   #put "users/destoring/:id" => "users#destory"
-  
+  resources :comment
   resources :items  
   
   get "items/index"
@@ -33,6 +33,7 @@ Rails.application.routes.draw do
   #get "password_sent" => "authentication#password_sent"
   
   root :to => 'home#welcome'
+  
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
