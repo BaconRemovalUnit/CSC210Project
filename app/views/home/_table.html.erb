@@ -1,20 +1,14 @@
 <table id='item_table' >
-<<<<<<< HEAD
-  <caption>Your saved history</caption>
+<caption>Your saved history</caption>
   <tr>
 	  <th>Item Name</th> <th>User Name</th> <th>Price </th> <th>Description</th>
   </tr>
-	<% @items.each do |p| %>
-		<tr>
-		  <td><%= p.name %></td> <td><%=p.username%></td> <td><%=p.price%></td> <td><%=p.description%></td>
-		</tr>
-=======
 	<tbody id='item_tbody'>
 	<% @items.each do |p| %>
 			<tr>			
 				<%= render 'tabledata', item: p  %>
 			</tr>
->>>>>>> FETCH_HEAD
+
 	<% end %>
 	</tbody>
 </table>
