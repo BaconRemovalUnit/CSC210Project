@@ -29,6 +29,8 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 
 gem 'carrierwave'
 gem 'remotipart'
+gem "mini_magick"
+gem 'cloudinary'
 
 group :development do
   gem 'taps'

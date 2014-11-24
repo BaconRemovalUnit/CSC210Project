@@ -6,7 +6,10 @@
 	<tbody id='item_tbody'>
 	<% @items.each do |p| %>
 			<tr>			
-				<%= render 'tabledata', item: p  %>
+<td><%= link_to p.name, item_path(p)%></td> <td><%=p.username%></td> <td><%=p.price%></td> <td><%=p.description%></td>
+	<% if p.photo.present? %>
+		<td><%= cl_image_tag p.photo.url %></td>
+	<%end%>
 			</tr>
 
 	<% end %>
