@@ -2,6 +2,7 @@ class HomeController < ApplicationController
   def welcome
     @items = Item.all
     @item = Item.new
+    @comments = Comment.all
   end
 
   def login

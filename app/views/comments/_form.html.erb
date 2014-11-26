@@ -1,0 +1,13 @@
+
+<%= form_for(Comment.new, format: :js,remote: true ) do |f| %>
+  <%= f.hidden_field :item, :value => item_id %>
+    <%= f.hidden_field :user, :value => current_user.id%>
+  <div class="field">
+    <%= f.label :content %><br>
+    <%= f.text_field :content %>
+  </div>
+  <br>
+  <div class="actions">
+    <%= f.submit  %>
+  </div>
+<% end %>

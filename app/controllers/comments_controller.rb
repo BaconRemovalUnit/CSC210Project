@@ -1,27 +1,24 @@
-class CommentController < ApplicationController
+class CommentsController < ApplicationController
   def index
     @comments = Comment.all
   end
   
   def new
     @comment = Comment.new
+    render 'form'
   end
-  
-  def newcomment
-    @comment = Comment.new
-  end
-  
+    
   def create
     ActionController::Parameters.permit_all_parameters = true
     params[:comment][:username] = User.find_by(id: current_user)._id
     @comment = Comment.create( comment_params )
-  
+    @comment_div = '#comment_'+ @comment.item.to_s
     respond_to do |format|
       if @comment.save
         format.html { redirect_to comment_path(@comment), notice: 'Thing was successfully created.' }
         format.json { render json: @comment }
         
-        format.js
+        format.js 
       else
         format.html { render :new }
         format.json { render json: @comment.errors.full_messages, status: :unprocessable_entity }
@@ -64,6 +61,9 @@ class CommentController < ApplicationController
     redirect_to comment_index_path
   end
   
+  def render_form
+    render 'form'
+  end
     private
     # Use callbacks to share common setup or constraints between actions.
     def set_comment

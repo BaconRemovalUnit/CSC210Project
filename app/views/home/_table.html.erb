@@ -5,12 +5,38 @@
   </tr>
 	<tbody id='item_tbody'>
 	<% @items.each do |p| %>
-			<tr>			
-<td><%= link_to p.name, item_path(p)%></td> <td><%=p.username%></td> <td><%=p.price%></td> <td><%=p.description%></td>
-	<% if p.photo.present? %>
-		<td><%= cl_image_tag p.photo.url %></td>
-	<%end%>
-			</tr>
+	<tr>			
+		<td><%= link_to p.name, item_path(p)%></td> <td><%=p.username%></td> <td><%=p.price%></td> <td><%=p.description%></td>
+		<% if p.photo.present? %>
+			<td><%= cl_image_tag p.photo.url %></td>
+		<%else%>
+			<td></td>
+		<%end%>
+		
+		<td>
+			<div id= 'comment_<%= p.id %>' >
+			<% @comments.each do|f| %>
+				<% if f.item == p.id %>
+					<p>Comment made by <%= User.find_by(id: f.user)._id %> : <%= f.content %> </p>		 		
+				<% end %>
+			<% end %>
+			</div> <!-- closing div 'comment' -->
+
+		</td>
+		
+		<td>
+			<div id = 'task_form_<%= p.id %>' style = "display : none" >
+				<%= render 'comments/form', :item_id => p.id %>
+			</div>  <!--closing div 'task_form' -->
+		</td>
+		<td>
+			<div id='comment'>
+    			
+    			<%= link_to "New Comment", new_comment_path, remote:true,  :id=>"new_comment_#{p.id}", :class => "Comment" %>
+			</div>  <!--closing div 'comment'-->
+		</td>
+	
+	</tr>
 
 	<% end %>
 	</tbody>

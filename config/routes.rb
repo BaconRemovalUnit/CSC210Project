@@ -8,9 +8,10 @@ Rails.application.routes.draw do
   post "users/create"
   patch "users/update/:id" => "users#update" 
   #put "users/destoring/:id" => "users#destory"
-  resources :comment
-  resources :items  
-  
+ 
+  resources :items
+  resources :comments
+    
   get "items/index"
 
   get "home/welcome"

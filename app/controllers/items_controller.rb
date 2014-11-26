@@ -7,11 +7,6 @@ class ItemsController < ApplicationController
     @item = Item.new
   end
   
-  def newitem
-    @item = Item.new
-  end
-  
-  
   def create
     ActionController::Parameters.permit_all_parameters = true
     params[:item][:username] = User.find_by(id: current_user)._id
