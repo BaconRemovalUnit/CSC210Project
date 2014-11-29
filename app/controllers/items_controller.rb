@@ -1,10 +1,14 @@
 class ItemsController < ApplicationController
   def index
-    @items = Item.all
+     @items= Item.search(params[:search])
   end
   
   def new
     @item = Item.new
+  end
+
+  def show
+    @item = Item.where(params[:id])
   end
   
   def create
