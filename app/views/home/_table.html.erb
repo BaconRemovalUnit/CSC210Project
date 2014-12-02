@@ -1,23 +1,23 @@
 <table id='item_table' >
-<caption>Your saved history</caption>
+<caption>Items on sale</caption>
   <tr>
-	  <th>Item Name</th> <th>User Name</th> <th>Price </th> <th>Description</th>
+	  <th>Item Name</th> <th>User Name</th> <th>Price </th> <th>Description</th> <th>Picture</th> <th>User comments</th> <th>edit</th> <th>add new comment</th>
   </tr>
 	<tbody id='item_tbody'>
 	<% @items.each do |p| %>
 	<tr>			
-		<td><%= link_to p.name, item_path(p)%></td> <td><%=p.username%></td> <td><%=p.price%></td> <td><%=p.description%></td>
+		<td><%= link_to p.name, item_path(p)%></td> <td><%=p.username%> </td> <td><%=p.price%></td> <td><%=p.description%></td>
 		<% if p.photo.present? %>
 			<td><%= cl_image_tag p.photo.url %></td>
 		<%else%>
-			<td></td>
+			<td><%=p.username%> hasn't added any photos</td>
 		<%end%>
 		
 		<td>
 			<div id= 'comment_<%= p.id %>' >
 			<% @comments.each do|f| %>
 				<% if f.item == p.id %>
-					<p>Comment made by <%= User.find_by(id: f.user)._id %> : <%= f.content %> </p>		 		
+					<p>Comment made by <%= User.find_by(id: f.user)._id %> : <%= f.content %> </p>
 				<% end %>
 			<% end %>
 			</div> <!-- closing div 'comment' -->

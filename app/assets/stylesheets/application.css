@@ -26,16 +26,50 @@ h1{
 h2{
     color: black;
     font-family: cursive;
-    font-size: 120%;
+    font-size: 150%;
     text-align: center;
     margin:0.1em;
 }
 
 table{
     float:right;
+    table-layout: fixed;
 }
 tr,td,th{
     border: 1px solid black;
     margin:0em;
     padding:0em;
+    height:20px;
+}
+
+
+label {
+
+    display: block;
+    width: 150px;
+    height:25px;
+
+}
+
+
+body{
+    background-image: url("green1.jpg");
+    background-repeat:repeat-y;
+}
+
+input {
+    display: block;
+    width: auto;
+    height:25px;
+    font-family: sans-serif;
+    font-size: 14px;
+
+}
+
+img.bg {
+
+
+    position: fixed;
+    top: 0;
+    left: 0;
 }
