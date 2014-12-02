@@ -15,20 +15,5 @@ h1{
 
 body{
   background-image: url("green1.jpg");
-  background-repeat:repeat-x;
-}
-
-img.bg {
-
-  min-height: 200%;
-  min-width: 1024px;
-
-
-  width: 100%;
-  height: auto;
-
-
-  position: fixed;
-  top: 0;
-  left: 0;
+  background-repeat:no-repeat;
 }
