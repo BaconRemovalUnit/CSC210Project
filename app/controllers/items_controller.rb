@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   def index
-     @items= Item.search(params[:search])
+     @items= Item.search(params[:search], params[:commit])
   end
   
   def new
