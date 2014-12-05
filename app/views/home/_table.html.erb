@@ -17,7 +17,12 @@
 			<div id= 'comment_<%= p.id %>' >
 			<% @comments.each do|f| %>
 				<% if f.item == p.id %>
-					<p>Comment made by <%= User.find_by(id: f.user)._id %> : <%= f.content %> </p>
+					
+					<% if User.find_by(id: f.user).nil? %>
+						<p>Comment made by <em> the user has deleted its account </em> : <%= f.content %> </p>
+					<% else %>
+						<p>Comment made by <%= User.find_by(id: f.user)._id %> : <%= f.content %> </p>
+					<% end %>
 				<% end %>
 			<% end %>
 			</div> <!-- closing div 'comment' -->
