@@ -18,7 +18,7 @@ class UsersController < ApplicationController
     if @user.save
       redirect_to  home_welcome_path
     else
-      redirect_to  :action => "newuser"
+      redirect_to  :action => "new"
     end
   end
   
