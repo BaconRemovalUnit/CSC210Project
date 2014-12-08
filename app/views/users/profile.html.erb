@@ -1,0 +1,23 @@
+<body>
+	<h2><%= @user._id %></h2>
+	<div class="itemsforsales">
+		<h3>Items for sales</h3>
+		<% if @salesItems.present? %>
+			<% @items =  @salesItems %>
+			<%= render 'home/table'%>
+		<% else %>
+			<p>No items for sales yet</p>
+		<% end %>
+		
+	</div>
+	<div class="itemsinterestedin">
+		<h3>Items Interested in</h3>
+		<% if @interestedItems.present? %>
+			<% @items =  @interestedItems %>
+			<%= render 'home/table'%>
+		<% else %>
+			<p>No items interested in yet</p>
+		<% end %>
+	</div>
+</body>
+

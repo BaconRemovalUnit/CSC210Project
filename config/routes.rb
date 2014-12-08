@@ -1,16 +1,12 @@
 Rails.application.routes.draw do
-
-  get "users/newuser"
-  get "users/index"
-  get "users/modify/:id" => "users#modify"
-  get "users/remove/:id" => "users#remove"
-  
-  post "users/create"
-  patch "users/update/:id" => "users#update" 
-  #put "users/destoring/:id" => "users#destory"
  
   resources :items
   resources :comments
+  resources :users do
+    collection do
+      get 'profile/:id' => "users#profile"
+    end
+  end
     
   get "items/index"
 

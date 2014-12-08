@@ -1,8 +1,5 @@
 class HomeController < ApplicationController
   
-  
-  layout "nav"
-
   def welcome
     @items = Item.all
     @item = Item.new

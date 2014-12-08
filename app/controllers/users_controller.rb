@@ -3,8 +3,12 @@ class UsersController < ApplicationController
     @users = User.all
   end
   
-  def newuser
+  def new
     @user = User.new
+  end
+  
+  def show
+    @user = User.where(params[:id])
   end
   
   def create
@@ -18,7 +22,7 @@ class UsersController < ApplicationController
     end
   end
   
-  def modify
+  def edit
     @user = User.find(params[:id])
   end
   
@@ -34,9 +38,21 @@ class UsersController < ApplicationController
        
   end
   
-  def remove
+  def destroy
     User.find(params[:id]).delete
     redirect_to home_welcome_path
+  end
+  
+  def profile
+    @user= User.find(params[:id])
+    @salesItems = Item.search(@user._id, "Search by user name")
+    @commentdummy = Comment.where(user: params[:id])
+    idArray = []
+    @commentdummy.each do |p|
+      idArray.push p.item
+    end
+    @interestedItems = Item.find(idArray)
+    @comments = Comment.all
   end
   
 end

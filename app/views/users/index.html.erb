@@ -6,9 +6,9 @@
 <% @users.each do |p| %>
 	<tr>
 		<td><%= p._id %></td> <td><%=p.password%></td> <td><%=p.email%></td>
-		<td> <%= link_to "edit", :action=>"modify", :id=>p %></td>
-		<td><%= link_to "remove", :action=>"remove", :id=>p %></td>
+		<td> <%= link_to "edit", edit_user_path(p) %></td>
+		<td><%= link_to "Delete", user_path(p), :method => 'delete' %></td>
 	</tr>
 <% end %>
 </table>
-<p><%= link_to "Create new account", users_newuser_path%></p>
+<p><%= link_to "Create new account", new_user_path%></p>

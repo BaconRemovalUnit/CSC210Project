@@ -2,8 +2,13 @@
 <%= javascript_include_tag 'comment' %>
 
   <% if current_user %>
-
-	<div id="task_form"></div>
+	<%= form_tag items_path, :method => 'get' do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search by item name" %>
+    <%= submit_tag "Search by user name" %>
+  </p>
+  <% end %>
 	
 	<%= render 'table' %>
 	
@@ -15,7 +20,7 @@
     <h2>Do you want to<h2>
 	<p><%= link_to "Login", home_login_path %></p>
 	<h2>or<h2>
-	<p><%= link_to "Sign up", users_newuser_path %></p>
+	<p><%= link_to "Sign up", new_user_path %></p>
   <% end %>
 
   <script>
