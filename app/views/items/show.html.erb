@@ -1,12 +1,22 @@
 <h1>Item</h1>
+
+<%= form_tag items_path, :method => 'get' do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search by item name" %>
+    <%= submit_tag "Search by user name" %>
+  </p>
+  <% end %>
+
 <table>
 	<tr>
 		<td>Name</td> <td>Username</td> <td>Description</td> <td>Price</td>
-	</tr>
+	</tr>
+
 	<tr>
 		<td><%= @item.name %></td> <td><%=@item.username%></td> <td><%=@item.price%></td> <td><%=@item.description%></td>
-		
 	</tr>
+<p><%= link_to "Back to main menu", home_welcome_path %></p>
 
 </table>
 

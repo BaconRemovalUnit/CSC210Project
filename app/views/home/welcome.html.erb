@@ -3,7 +3,6 @@
 <h1>Welcome to URChange</h1>
   <% if current_user %>
 
-		
 	<div id="task_form"></div>
 	
 	<%= render 'table' %>
@@ -18,5 +17,11 @@
 	<h2>or<h2>
 	<p><%= link_to "Sign up", users_newuser_path %></p>
   <% end %>
+
+  <script>
+  <% if params[:notice].present? %>
+    alert(<%= params[:notice] %>);
+  <% end %>
+</script>
 </body>
 
