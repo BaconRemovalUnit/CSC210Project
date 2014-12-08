@@ -4,9 +4,9 @@ $(document).ready(function(){
 });
 
 function ClickListener(){
-	console.log('FFFFFFFF');
+	console.log('ClickListener');
 	$("a").unbind('click');
-	var link_button = $("a[class='Comment']").on('click', function(e){
+	$("a[class='Comment']").on('click', function(e){
 		e.preventDefault();
 		var linkId = e.target.id;
 		var arrayOfId = linkId.split("_");
@@ -29,6 +29,23 @@ function ClickListener(){
 			return false;  
 		}
 		
+	});
+	
+	$("input[class = 'createcomment']").on('click', function(e){
+		
+		var buttonId = e.target.id;
+		var arrayOfId = buttonId.split("_");
+		var id = arrayOfId[arrayOfId.length-1];
+		var taskId = '#task_form_' + id;
+		var commentbuttonid = 'new_comment_' + id;
+		var commentbutton = document.getElementById(commentbuttonid);
+		$(taskId).hide();
+		$(taskId).slideUp(350);
+		
+		console.log(commentbuttonid);
+		console.log(commentbutton);
+		commentbutton.innerHTML ='New Comment';		
+		console.log("Automatic change");
 	});
 
 	

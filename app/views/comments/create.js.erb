@@ -1,5 +1,5 @@
 
-console.log('Comment');
+console.log('Comment Created');
+
 
 $('<%= @comment_div %>').append("<p> Comment made by <%= j(User.find_by(id: @comment.user)._id) %> : <%= j(@comment.content)%> </p>");
- 
