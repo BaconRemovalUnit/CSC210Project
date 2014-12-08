@@ -1,6 +1,8 @@
 <%= form_for @user, :url => { :controller => 'users', :action => 'update', :id => @user } do |f| %>
+
 	<div class="field">
     	<%= f.label :_id, "ID" %>
+      <%= f.text_field :_id %>
     </div>
     
 	<div class="field">
@@ -19,4 +21,7 @@
    	</div>
     
 <% end %>
-<p><%= link_to 'Back', home_welcome_path %></p>
+  <div class="actions">
+
+<br><br>
+<li><%= link_to "Delete Account", user_path(current_user), :method => 'delete' %></li>

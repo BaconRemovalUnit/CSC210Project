@@ -14,9 +14,9 @@
    <div class="container">
     <nav>
 		<ul>
-	      	<li><%= link_to "Delete Account", user_path(current_user), :method => 'delete' %></li>
+	      	<li><%= link_to "Home", home_welcome_path %></li>
+          <li><%= link_to "Search",items_path %></li>
       		<li><%= link_to "Edit Account", edit_user_path(current_user) %> </li>
-      		<li><%= link_to "Search",items_path %></li>
       		<li><%= link_to "Logout",authentication_signout_path%></li>
       	</ul>
     </nav>

@@ -1,3 +1,8 @@
+
+<% if current_user %>
+<h2>You are already logged in!</h2>
+
+<% else %>
 <h2> Creating New Account </h2>
 <%= form_for @user, :url => {:controller=>"users", :action => "create"} do |f| %>
 	<div class="field">
@@ -22,7 +27,7 @@
   <li><%= msg %></li>
   <% end %>
 </ul>
-   
 <% end %>
 
-<p><%= link_to 'Back', home_welcome_path %></p>
+<% end %>
+

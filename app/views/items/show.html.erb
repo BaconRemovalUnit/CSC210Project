@@ -14,9 +14,16 @@
 	</tr>
 
 	<tr>
-		<td><%= @item.name %></td> <td><%=@item.username%></td> <td><%=@item.price%></td> <td><%=@item.description%></td>
+		<td><%= @item.name %></td>
+		<td><%=@item.username%></td>
+		<td><%=@item.price%></td>
+		<td><%=@item.description%></td>
+		<% if current_user._id == @item.username %>
+			<td><%= link_to "delete",item_path(@item), method: :delete%></td>
+		<% else %>
+			<p></p>
+		<% end %>	
 	</tr>
-<p><%= link_to "Back to main menu", home_welcome_path %></p>
 
 </table>
 

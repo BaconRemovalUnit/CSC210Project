@@ -19,9 +19,12 @@
 		</td> <td><%=p.username%></td>
 		<td><%=p.price%></td>
 		<td><%=p.description%></td>
-		<td><%= link_to "delete", item_path(p), method: :delete%></td>		
+		<% if current_user._id == p.username %>
+			<td><%= link_to "delete", item_path(p), method: :delete%></td>
+		<% else %>
+			<p></p>
+		<% end %>	
 	</tr>
 <% end %>
 </table>
 
-<p><%= link_to "Back to main menu", home_welcome_path %></p>
