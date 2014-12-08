@@ -2,19 +2,6 @@
 <%= javascript_include_tag 'comment' %>
 <h1>Welcome to URChange</h1>
   <% if current_user %>
-    <h2>Hi <%= current_user._id %> </h2>
-    <h2>Would you like to</h2>
-    <h2><%= link_to "Edit", :controller=>"users", :action=>"modify", :id=>current_user %>  your account setting?</h2>
-    <h2><%= link_to "Delete", :controller=>"users", :action=>"remove", :id=>current_user %>  your account?</h2>
-	<h2><%= link_to "Sign Out", authentication_signout_path %></h2>
-
-	<%= form_tag items_path, :method => 'get' do %>
-  <p>
-    <%= text_field_tag :search, params[:search] %>
-    <%= submit_tag "Search by item name" %>
-    <%= submit_tag "Search by user name" %>
-  </p>
-  <% end %>
 
 	<div id="task_form"></div>
 	
@@ -30,5 +17,11 @@
 	<h2>or<h2>
 	<p><%= link_to "Sign up", users_newuser_path %></p>
   <% end %>
+
+  <script>
+  <% if params[:notice].present? %>
+    alert(<%= params[:notice] %>);
+  <% end %>
+</script>
 </body>
 

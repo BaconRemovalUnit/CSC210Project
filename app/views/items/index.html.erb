@@ -1,6 +1,13 @@
 <h1>Item List</h1>
 
 
+<%= form_tag items_path, :method => 'get' do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search by item name" %>
+    <%= submit_tag "Search by user name" %>
+  </p>
+  <% end %>
 
 <table>
 	<tr>
@@ -17,3 +24,4 @@
 <% end %>
 </table>
 
+<p><%= link_to "Back to main menu", home_welcome_path %></p>
