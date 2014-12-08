@@ -6,8 +6,16 @@
     <h2>Would you like to</h2>
     <h2><%= link_to "Edit", :controller=>"users", :action=>"modify", :id=>current_user %>  your account setting?</h2>
     <h2><%= link_to "Delete", :controller=>"users", :action=>"remove", :id=>current_user %>  your account?</h2>
-	<p><%= link_to "Sign Out", authentication_signout_path %></p>
-		
+	<h2><%= link_to "Sign Out", authentication_signout_path %></h2>
+
+	<%= form_tag items_path, :method => 'get' do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search by item name" %>
+    <%= submit_tag "Search by user name" %>
+  </p>
+  <% end %>
+
 	<div id="task_form"></div>
 	
 	<%= render 'table' %>
