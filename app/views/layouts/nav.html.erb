@@ -8,16 +8,18 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-	<h1>URChange</h1>
+
 <% if current_user %>
 <!-- after login -->
    <div class="container">
     <nav>
 		<ul>
 	      	<li><%= link_to "Home", home_welcome_path %></li>
+          <li><%= link_to "My Item", '#' %></li>
           <li><%= link_to "Search",items_path %></li>
-      		<li><%= link_to "Edit Account", edit_user_path(current_user) %> </li>
+      		<li><%= link_to "Setting", edit_user_path(current_user) %> </li>
       		<li><%= link_to "Logout",authentication_signout_path%></li>
+
       	</ul>
     </nav>
   </div>
@@ -25,6 +27,7 @@
 <!-- Without login -->
 <% end %>
 
+<h1>URChange</h1>
 <div>
 
   <%= yield %>
