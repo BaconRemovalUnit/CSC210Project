@@ -11,15 +11,14 @@
 
 
    <div class="container">
-    <nav>
+     <% if current_user %>
+         <li><%= link_to "Delete Account", :controller=>"users", :action=>"remove", :id=>current_user %></li>
+         <li><%= link_to "Edit Account", :controller=>"users", :action=>"modify", :id=>current_user %> </li>
+         <li><%= link_to "Search",items_path %></li>
+         <li><%= link_to "Logout",authentication_signout_path%></li>
 
-      <li><%= link_to "Delete Account", :controller=>"users", :action=>"remove", :id=>current_user %></li>
-      <li><%= link_to "Edit Account", :controller=>"users", :action=>"modify", :id=>current_user %> </li>
-      <li><%= link_to "Search",items_path %></li>
-      <li><%= link_to "Logout",authentication_signout_path%></li>
-      
 
-    </nav>
+     <% end %>
   </div>
 
 <div>
