@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<%= javascript_include_tag :defaults %>
+<head>
+  <title>URChange</title>
+  <%= stylesheet_link_tag 'navigation', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	
+	<h1>URChange</h1>
+	
+	<div>
+
+  		<%= yield %>
+
+	</div>
+
+
+
+</body>
+</html>

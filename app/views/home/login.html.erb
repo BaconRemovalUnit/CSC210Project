@@ -3,7 +3,7 @@
     <h2>Hi <%= current_user._id %>, You have already logged in!!</h2>
 	<p><%= link_to "Click", home_welcome_path %> to return to home page!</p>
   <% else %>
-  <h1> Logging In </h1>
+  <h2> Logging In </h2>
 
 	<%= form_for(:authentication) do |f| %>
 		<div class="field">
