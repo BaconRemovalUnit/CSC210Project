@@ -17,7 +17,7 @@
 	      	<li><%= link_to "Home", home_welcome_path %></li>
           <li><%= link_to "My items", items_path+"?search="+(current_user._id)+"&commit=Search+by+user+name" %></li>
           <li><%= link_to "Search",items_path %></li>
-      		<li><%= link_to "Setting", edit_user_path(current_user) %> </li>
+      		<li><%= link_to "Settings", edit_user_path(current_user) %> </li>
       		<li><%= link_to "Logout",authentication_signout_path%></li>
 
       	</ul>

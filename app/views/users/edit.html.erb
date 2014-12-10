@@ -17,11 +17,11 @@
 
 
   	<div class="actions">
-    	<%= f.submit "Update" %>
+    	<%= f.submit "Update"  ,data: { confirm: "Are you sure to save the changes?" } %>
    	</div>
     
 <% end %>
   <div class="actions">
 
 <br><br>
-<h2><%= link_to "Delete Account", user_path(current_user), :method => 'delete', data: { confirm: "Are you sure to delete your account?" } %></h2>
+<h2><%= link_to "Delete Account", user_path(current_user), :method => 'delete', data: { confirm: "Are you sure to delete your account?" }%></h2>
