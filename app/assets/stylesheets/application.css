@@ -15,7 +15,7 @@
  */
 h1{
     color: darkgreen;
-    font-family: fantasy;
+    font-family: Charcoal;
     font-size: 450%;
     font-weight: bold;
     text-align: center;
@@ -25,7 +25,7 @@ h1{
 
 h2{
     color: black;
-    font-family: cursive;
+    font-family:  Geneva;
     font-size: 150%;
     text-align: center;
     margin:0.1em;
@@ -44,11 +44,9 @@ tr,td,th{
 
 
 label {
-
     display: block;
     width: 150px;
     height:25px;
-
 }
 
 
@@ -63,7 +61,6 @@ input {
     height:25px;
     font-family: sans-serif;
     font-size: 14px;
-
 }
 
 img.bg {
