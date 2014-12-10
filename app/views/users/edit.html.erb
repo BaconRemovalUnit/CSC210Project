@@ -24,4 +24,4 @@
   <div class="actions">
 
 <br><br>
-<li><%= link_to "Delete Account", user_path(current_user), :method => 'delete' %></li>
+<h2><%= link_to "Delete Account", user_path(current_user), :method => 'delete', data: { confirm: "Are you sure to delete your account?" } %></h2>
