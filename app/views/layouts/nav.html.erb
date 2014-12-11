@@ -17,7 +17,6 @@
 		<ul>
 	      	<li id="li_Home" class="nav"><%= link_to "Home", home_welcome_path, id: "a_Home", class:"nav" %></li>
 	      	<li id="li_MyPorfile" class="nav"><%= link_to "My Profile", profile_users_path(:id=> current_user.id), id: "a_MyProfile", class:"nav"  %></li>
-          	<li id="li_MyItems" class="nav"><%= link_to "My items", items_path+"?search="+(current_user._id)+"&commit=Search+by+user+id", id:"a_MyItems", class: "nav" %></li>
       		<li id="li_Setting" class="nav"><%= link_to "Settings", setting_users_path(), id:"a_Setting", class:"nav"%> </li>
       		<li id="li_Logout" class="nav"><%= link_to "Logout",authentication_signout_path, id:"a_Logout", class:"nav"%></li>
 
