@@ -1,22 +1,22 @@
 a:link {
-    color :#669900;
-    text-decoration: none;
+  color: #006400;
+  text-decoration: none;
 }
 
 a:visited {
-    color :#669900;
-    text-decoration: none;
+  color :#006400;
+  text-decoration: none;
 }
 
 a:hover {
-  
-    text-decoration: underline;
+  color :#669900;
+  // text-decoration: underline;
 }
 
-a:active {
-    color : #fff;
-    text-decoration: underline;
-}
+// a:active {
+    // color : #fff;
+    // text-decoration: underline;
+// }
 
 li{
     color: black;
@@ -34,7 +34,9 @@ h1{
     font-weight: bold;
     text-align: center;
     text-decoration: blink;
-    border-width: 5px;
+    border-bottom: 3px solid #CC0000;
+    padding: 7px;
+    
 }
 
 h2{
@@ -134,25 +136,16 @@ tr,th{
     overflow: hidden;
 }
 
-label {
-
-    display: block;
-    width: 150px;
-    height:25px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
 body{
-    font-family:  Helvetica;
-    color: gray !important;
+    
+    color: rgb(30, 39, 210);
     
    // background-image: url("green1.jpg");
    // background-repeat:repeat-y;
     background-color: darkseagreen;
-    margin-left: auto;
-    margin-right: auto;
     
+    margin: 0 auto;
+    width: 80%;
 }
 
 input {
@@ -163,31 +156,26 @@ input {
     font-size: 14px;
     margin-left: auto;
     margin-right: auto;
-  border-radius: 5px;
+    border-radius: 5px;
 }
 
 img.bg {
-
-
     position: fixed;
     top: 0;
     left: 0;
 }
 
 .container ul li {
-    margin-left: auto; 
-    margin-right: auto;
     display: inline-block;
     font-size:150%;
     width: 200px;
-    background-color: green;
+    //background-color: green;
     margin-left: auto;
     margin-right: auto;
-  border-radius: 15px;
+    border: 3.5px solid #CC0000;
+    border-radius: 15px;
 }
 
-button{
-    margin-left: auto;
-    margin-right: auto;
-    
+.container{
+    //background-color: black;
 }

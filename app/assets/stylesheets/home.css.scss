@@ -1,32 +1,3 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-h1{
-  color: darkgreen;
-  font-family: fantasy;
-  font-size: 500%;
-  font-weight: bold;
-  text-align: center;
-  text-decoration: blink;
-  margin-bottom:0em;
-}
-
-body{
-  background-image: url("green1.jpg");
-  background-repeat:repeat-x;
-}
-
-img.bg {
-
-  min-height: 200%;
-  min-width: 1024px;
-
-
-  width: 100%;
-  height: auto;
-
-
-  position: fixed;
-  top: 0;
-  left: 0;
-}

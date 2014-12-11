@@ -1,7 +1,9 @@
+<%= stylesheet_link_tag 'profile', media: 'all', 'data-turbolinks-track' => true %>
+<%= javascript_include_tag 'nav', 'data-turbolinks-track' => true %>
 <body>
 	<h2><%= @user._id %></h2>
 	<div class="itemsforsales">
-		<h3>Items for sales</h3>
+		<h3>My Items for sales</h3>
 		<% if @salesItems.present? %>
 			<% @items =  @salesItems %>
 			<%= render 'home/table'%>
@@ -11,7 +13,7 @@
 		
 	</div>
 	<div class="itemsinterestedin">
-		<h3>Items Interested in</h3>
+		<h3>I have interest in these item:</h3>
 		<% if @interestedItems.present? %>
 			<% @items =  @interestedItems %>
 			<%= render 'home/table'%>

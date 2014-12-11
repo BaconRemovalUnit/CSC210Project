@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   resources :comments
   resources :users do
     collection do
-      get 'profile/:id' => "users#profile"
+      get 'setting'
+      get 'profile' => "users#profile"
     end
   end
     

@@ -1,5 +1,6 @@
+<%= javascript_include_tag 'nav', 'data-turbolinks-track' => true %>
+<%= javascript_include_tag 'comment', 'data-turbolinks-track' => true %>
 <body>
-<%= javascript_include_tag 'comment' %>
 
   <% if current_user %>
 	<%= form_tag items_path, :method => 'get' do %>

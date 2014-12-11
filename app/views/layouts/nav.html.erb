@@ -3,22 +3,23 @@
 <%= javascript_include_tag :defaults %>
 <head>
   <title>URChange</title>
+  <%= stylesheet_link_tag 'form', media: 'all', 'data-turbolinks-track' => true %>
   <%= stylesheet_link_tag 'navigation', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+<h1>URChange</h1>
 <% if current_user %>
 <!-- after login -->
    <div class="container">
     <nav>
 		<ul>
-	      	<li><%= link_to "Home", home_welcome_path %></li>
-          <li><%= link_to "My items", items_path+"?search="+(current_user._id)+"&commit=Search+by+user+name" %></li>
-          <li><%= link_to "Search",items_path %></li>
-      		<li><%= link_to "Settings", edit_user_path(current_user) %> </li>
-      		<li><%= link_to "Logout",authentication_signout_path%></li>
+	      	<li id="li_Home" class="nav"><%= link_to "Home", home_welcome_path, id: "a_Home", class:"nav" %></li>
+	      	<li id="li_MyPorfile" class="nav"><%= link_to "My Profile", profile_users_path(:id=> current_user.id), id: "a_MyProfile", class:"nav"  %></li>
+          	<li id="li_MyItems" class="nav"><%= link_to "My items", items_path+"?search="+(current_user._id)+"&commit=Search+by+user+id", id:"a_MyItems", class: "nav" %></li>
+      		<li id="li_Setting" class="nav"><%= link_to "Settings", setting_users_path(), id:"a_Setting", class:"nav"%> </li>
+      		<li id="li_Logout" class="nav"><%= link_to "Logout",authentication_signout_path, id:"a_Logout", class:"nav"%></li>
 
       	</ul>
     </nav>
@@ -27,7 +28,6 @@
 <!-- Without login -->
 <% end %>
 
-<h1>URChange</h1>
 <div>
 
   <%= yield %>

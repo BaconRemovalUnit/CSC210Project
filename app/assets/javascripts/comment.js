@@ -1,11 +1,10 @@
 $(document).ready(function(){
-
-	ClickListener();
+	CommentListener();
 });
 
-function ClickListener(){
-	console.log('ClickListener');
-	$("a").unbind('click');
+function CommentListener(){
+	console.log('CommentListener');
+	
 	$("a[class='Comment']").on('click', function(e){
 		e.preventDefault();
 		var linkId = e.target.id;

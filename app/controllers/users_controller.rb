@@ -55,4 +55,9 @@ class UsersController < ApplicationController
     @comments = Comment.all
   end
   
+  def setting
+    @user = current_user
+     
+  end
+  
 end

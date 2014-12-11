@@ -1,5 +1,5 @@
 <table id='item_table' >
-<caption>Items on sale</caption>
+
   <tr>
 	  <th>Item Name</th> <th>User Name</th> <th>Price </th> <th>Description</th> <th>Picture</th> <th>User comments</th> <th>add new comment</th> <th>Click to edit</th>
   </tr>
@@ -37,7 +37,7 @@
 		<td>
 			<div id='comment'>
     			
-    			<%= link_to "New Comment", new_comment_path, remote:true,  :id=>"new_comment_#{p.id}", :class => "Comment" %>
+    			<%= link_to "New Comment", new_comment_path, remote:true,  :id=>"new_comment_#{p.id}", :class => "Comment", :name=>"Button" %>
 			</div>  <!--closing div 'comment'-->
 		</td>
 	
