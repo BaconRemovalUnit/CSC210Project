@@ -1,7 +1,7 @@
 <%= form_for @user, :url => { :controller => 'users', :action => 'update', :id => @user } do |f| %>
 
 	<div class="hidden_field" >
-		<%f.hidden_field :_id, :value => current_user._id %>
+		<%f.hidden_field :_id, :value => @user._id %>
     </div>
     
 	<div class="field">

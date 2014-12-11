@@ -1,5 +1,28 @@
 <tr><td><%= link_to item.name, item_path(item)%></td> <td><%=item.username%></td> <td><%=item.price%></td> <td><%=item.description%></td>
 	<% if item.photo.present? %>
 		<td><%= cl_image_tag item.photo.url %></td>
+	<%else%>
+		<td><%=item.username%> hasn't added any photos</td>
+		
 	<%end%>
+	
+			<td>
+			<div id= 'comment_<%= item.id %>' >
+			</div> <!-- closing div 'comment' -->
+
+		</td>
+		
+		<td>
+			<div id = 'task_form_<%= item.id %>' style = "display : none" >
+				<%= render 'comments/form', :item_id => item.id %>
+			</div>  <!--closing div 'task_form' -->
+		</td>
+		<td>
+			<div id='comment'>
+    			
+    			<%= link_to "New Comment", new_comment_path, remote:true,  :id=>"new_comment_#{item.id}", :class => "Comment", :name=>"Button" %>
+			</div>  <!--closing div 'comment'-->
+		</td>
+	
+	
 </tr>

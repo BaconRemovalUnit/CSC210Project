@@ -29,6 +29,12 @@ class UsersController < ApplicationController
   def update
     ActionController::Parameters.permit_all_parameters = true
     @user = User.find(params[:id])
+    if params[:user][:password].blank?
+      params[:user][:password] = @user.password
+    end
+    if params[:user][:email].blank?
+      params[:user][:email]=@user.email
+    end
     @user.update_attributes(params[:user])
     if current_user
       redirect_to home_welcome_path
@@ -56,7 +62,7 @@ class UsersController < ApplicationController
   end
   
   def setting
-    @user = current_user
+    
      
   end
   
